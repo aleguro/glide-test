@@ -3,8 +3,6 @@ class EmployeesController < ApplicationController
   # GET /employees.json
   def index
 
-    puts pagination_params
-
     @employees = Employee.find(:all, params: pagination_params )
     render json: @employees
   end
