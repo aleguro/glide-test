@@ -218,3 +218,15 @@ Processing by EmployeesController#index as HTML
 Completed 200 OK in 3674ms (Views: 9.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "//employees?limit=3&expand=department.superdepartment&expand=manager.office" for ::1 at 2020-02-04 18:44:22 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"3", "expand"=>"manager.office"}
+Completed 200 OK in 5430ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=3&expand=department.superdepartment,expand=manager.office" for ::1 at 2020-02-04 18:47:14 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"3", "expand"=>"department.superdepartment,expand=manager.office"}
+Completed 200 OK in 1081ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
