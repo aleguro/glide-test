@@ -3,3 +3,4 @@
 tmp
 tmp/*
 .idea/workspace.xml
+log/activeresource_logger.log

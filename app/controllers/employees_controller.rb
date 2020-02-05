@@ -3,9 +3,8 @@ class EmployeesController < ApplicationController
   # GET /employees.json
   def index
 
-
-    employees = Employee.find(:all, params: pagination_params )
-    expand    = ExpandedList.new(employees, params.try[:expand], $offices, $departments)
+    employees = Employee.find(:all, params: pagination_params ).map(&:attributes)
+    expand    = ExpandableList.new(employees, Array(params.try(:[],:expand)), $offices, $departments)
 
     render json: expand.expand()
   end
@@ -13,8 +12,11 @@ class EmployeesController < ApplicationController
   # GET /employees/id.json
   def show
 
-    employee = Employee.find(:all, params: { id: employee_params[:id]} )
-    expand   = ExpandedList.new([employee], params.try[:expand], $offices, $departments)
+    employee = Employee.find(:all, params: { id: employee_params[:id]} ).map(&:attributes)
+    expand   = ExpandableList.new([employee],
+                                  params.try(:[],:expand),
+                                  $offices,
+                                  $departments)
 
     render json: expand.expand()
   end
