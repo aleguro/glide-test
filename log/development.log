@@ -344,3 +344,57 @@ Processing by EmployeesController#index as HTML
 Completed 200 OK in 4785ms (Views: 7.1ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/employees?limit=100" for ::1 at 2020-02-05 16:14:16 -0300
+Processing by EmployeesController#index as */*
+  Parameters: {"limit"=>"100"}
+Completed 200 OK in 1388ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=100" for ::1 at 2020-02-05 16:14:49 -0300
+Processing by EmployeesController#index as */*
+  Parameters: {"limit"=>"100"}
+Completed 200 OK in 1138ms (Views: 9.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=100" for ::1 at 2020-02-05 16:14:58 -0300
+Processing by EmployeesController#index as */*
+  Parameters: {"limit"=>"100"}
+Completed 200 OK in 1228ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=100" for ::1 at 2020-02-05 16:15:50 -0300
+Processing by EmployeesController#index as */*
+  Parameters: {"limit"=>"100"}
+Completed 200 OK in 1138ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=100" for ::1 at 2020-02-05 16:16:11 -0300
+Processing by EmployeesController#index as */*
+  Parameters: {"limit"=>"100"}
+Completed 200 OK in 1409ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=100" for ::1 at 2020-02-05 16:17:06 -0300
+Processing by EmployeesController#index as */*
+  Parameters: {"limit"=>"100"}
+Completed 200 OK in 1027ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=100&expand=manager.manager.manager" for ::1 at 2020-02-05 16:17:27 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"100", "expand"=>"manager.manager.manager"}
+Completed 200 OK in 4449ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=100&expand=manager.manager.manager" for ::1 at 2020-02-05 16:17:43 -0300
+Processing by EmployeesController#index as */*
+  Parameters: {"limit"=>"100", "expand"=>"manager.manager.manager"}
+Completed 200 OK in 4679ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?offset=2&limit=100&expand=manager.manager.manager" for ::1 at 2020-02-05 16:17:57 -0300
+Processing by EmployeesController#index as */*
+  Parameters: {"offset"=>"2", "limit"=>"100", "expand"=>"manager.manager.manager"}
+Completed 200 OK in 4507ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+

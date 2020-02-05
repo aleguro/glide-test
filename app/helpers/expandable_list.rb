@@ -23,24 +23,19 @@ class ExpandableList
     @managers    = []
   end
 
+  # Expand a row by filling in the attributes with full entities from different sources
+  # => Input {id: 1, name: 'alejandro', last_name:'gurovich', office:1}
+  # Output => {id: 1, name: 'alejandro', last_name:'gurovich', office: { id:, name: 'sales'}}
   def expand()
 
     normalize_levels()
 
-    puts @levels
-
     @levels.each do |level|
 
-      deepest = level.split('.').last
-
-      puts "Level: #{level}"
-      puts "Deepest: #{deepest}"
-
+      deepest  = level.split('.').last
       managers = []
       @rows.each do |row|
 
-        puts "level:#{level}"
-        puts "row: #{row}"
         val = row.access(level)
 
         if deepest == 'manager'
@@ -63,11 +58,7 @@ class ExpandableList
         ids       = {id: managers.map(&(Proc.new {|x| x.access(level)})) }
         employees = Employee.find(:all, :from => "/bigcorp/employees?#{ids.to_query}").map(&:attributes)
 
-        puts "Employes"
-
         managers.each do |manager|
-
-          puts "manager to pull #{manager.access(level)}"
 
           employee = employees.select { |employee| employee[:id] == manager.access(level) }.first()
           manager.set(level, employee)
@@ -81,8 +72,8 @@ class ExpandableList
   private
 
   # Deconstruct a list of expand requests to an array of combinations with hierarchies
-  # Input: ['manager.offices','offices.departments']
-  # Outut: ['manager','offices','manager.offices', 'offices.departments']
+  # => Input ['manager.offices','offices.departments']
+  # Outut => ['manager','offices','manager.offices', 'offices.departments']
   def normalize_levels()
 
     max  = 0

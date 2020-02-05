@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the glide test app 
 
-Things you may want to cover:
+* To run it
 
-* Ruby version
+$ rails s 
 
-* System dependencies
+* Command line testing
 
-* Configuration
+$ curl "http://localhost:3000/employees?limit=100&offset=2&expand=manager.manager.manager"
 
-* Database creation
+* Development Notes
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    Additional gems used
+    
+    - gem 'activeresource' : Simplifies access to api rest resources
+    - gem 'vine' : Simplifies hierarchical hash access 
