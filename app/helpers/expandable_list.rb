@@ -9,9 +9,9 @@ result    = ExpandableList.new(employees, Array({:expand=>["manager.manager.mana
 
 =end
 
-# Given a list of jsons, expands the attributes with whole bodys of
-#   information based on different sources such as the list itself,
-#   offices and departments dictionaries
+# Given a list of rows, expands the attributes with bodies of
+#   information based on different sources such as the api source and
+#   offices and departments static dictionaries.
 class ExpandableList
 
   def initialize(rows, levels, offices, departments)
@@ -80,6 +80,9 @@ class ExpandableList
 
   private
 
+  # Deconstruct a list of expand requests to an array of combinations with hierarchies
+  # Input: ['manager.offices','offices.departments']
+  # Outut: ['manager','offices','manager.offices', 'offices.departments']
   def normalize_levels()
 
     max  = 0

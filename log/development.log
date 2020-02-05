@@ -230,3 +230,117 @@ Processing by EmployeesController#index as HTML
 Completed 200 OK in 1081ms (Views: 0.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/employees?limit=3&expand=department.superdepartment,expand=manager.office" for ::1 at 2020-02-05 15:01:12 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"3", "expand"=>"department.superdepartment,expand=manager.office"}
+Completed 200 OK in 1314ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=20&expand=department.superdepartment,expand=manager.office" for ::1 at 2020-02-05 15:01:27 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"20", "expand"=>"department.superdepartment,expand=manager.office"}
+Completed 200 OK in 1253ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=20&expand=department.superdepartment" for ::1 at 2020-02-05 15:43:52 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"20", "expand"=>"department.superdepartment"}
+Completed 200 OK in 1371ms (Views: 10.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=20&expand=department.superdepartment" for ::1 at 2020-02-05 15:44:24 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"20", "expand"=>"department.superdepartment"}
+Completed 200 OK in 1171ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=20&expand=department.superdepartment,office" for ::1 at 2020-02-05 15:44:36 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"20", "expand"=>"department.superdepartment,office"}
+Completed 200 OK in 1129ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=20&expand=department.superdepartment,office" for ::1 at 2020-02-05 15:44:41 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"20", "expand"=>"department.superdepartment,office"}
+Completed 200 OK in 1128ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=20&expand=department.superdepartment&expand=office" for ::1 at 2020-02-05 15:45:04 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"20", "expand"=>"office"}
+Completed 200 OK in 1085ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=20&expand=department.superdepartment&expand=office" for ::1 at 2020-02-05 16:00:37 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"20", "expand"=>"office"}
+Completed 500 Internal Server Error in 158ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `param' for #<EmployeesController:0x00007fd4fd0f0580>
+Did you mean?  params
+               params=):
+  
+app/controllers/employees_controller.rb:32:in `modify_params'
+Started GET "/employees?limit=20&expand=department.superdepartment&expand=office" for ::1 at 2020-02-05 16:00:52 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"20", "expand"=>"office"}
+Completed 200 OK in 1351ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=20&expand=department.superdepartment,expand=office" for ::1 at 2020-02-05 16:01:01 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"20", "expand"=>"department.superdepartment,expand=office"}
+Completed 200 OK in 1101ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=20&expand=department.superdepartment,expand=office" for ::1 at 2020-02-05 16:01:04 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"20", "expand"=>"department.superdepartment,expand=office"}
+Completed 200 OK in 944ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=20&expand=department.superdepartment,office" for ::1 at 2020-02-05 16:01:18 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"20", "expand"=>"department.superdepartment,office"}
+Completed 200 OK in 1380ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=20&expand=department.superdepartment" for ::1 at 2020-02-05 16:06:17 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"20", "expand"=>"department.superdepartment"}
+Completed 200 OK in 1086ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=20&expand=department.superdepartment,office" for ::1 at 2020-02-05 16:06:30 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"20", "expand"=>"department.superdepartment,office"}
+Completed 200 OK in 1127ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=20&expand=department.superdepartment,office" for ::1 at 2020-02-05 16:08:32 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"20", "expand"=>"department.superdepartment,office"}
+Completed 200 OK in 1164ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=20&expand=department.superdepartment,office" for ::1 at 2020-02-05 16:08:59 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"20", "expand"=>"department.superdepartment,office"}
+Completed 200 OK in 1110ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=20&expand=department.superdepartment,office" for ::1 at 2020-02-05 16:09:14 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"20", "expand"=>"department.superdepartment,office"}
+Completed 200 OK in 1142ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/employees?limit=100&expand=manager.manager.manager" for ::1 at 2020-02-05 16:09:43 -0300
+Processing by EmployeesController#index as HTML
+  Parameters: {"limit"=>"100", "expand"=>"manager.manager.manager"}
+Completed 200 OK in 4785ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+

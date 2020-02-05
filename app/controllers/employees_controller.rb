@@ -1,7 +1,11 @@
 class EmployeesController < ApplicationController
 
+  before_action :modify_params, only: [:index, :show]
+
   # GET /employees.json
   def index
+
+    puts "params: #{Array(params.try(:[],:expand))}"
 
     employees = Employee.find(:all, params: pagination_params ).map(&:attributes)
     expand    = ExpandableList.new(employees, Array(params.try(:[],:expand)), $offices, $departments)
@@ -22,6 +26,13 @@ class EmployeesController < ApplicationController
   end
 
   private
+
+  def modify_params
+    
+    params[:expand] = params[:expand].split(',') if params.has_key?(:expand)
+
+    puts "modified params: #{params[:expand]}"
+  end
 
   # Filter out ony allowed params by query string
   def employee_params
